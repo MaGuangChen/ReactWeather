@@ -1,10 +1,13 @@
 module.exports = {
-  entry: './public/app.jsx' ,
+  entry: './app/app.jsx' ,//入口
   output: {
       path:__dirname,
-      filename: './public/bundle.js'
+      filename: './public/bundle.js'//生成一個bundle.js
   },
   resolve: {
+      root:__dirname,//node js的變數
+      alias: {
+      },
       extensions:['', '.js', '.jsx']
   },
   module: {
@@ -20,3 +23,4 @@ module.exports = {
       ]
   }
 };
+
