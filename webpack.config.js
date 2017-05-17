@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/components/app.jsx' ,//入口
+  entry: './app/app.jsx' ,//入口
   output: {
       path:__dirname,
       filename: './public/bundle.js'//生成一個bundle.js
@@ -8,7 +8,12 @@ module.exports = {
       root:__dirname,//node js的變數
       alias: {
           Main: 'app/components/Main.jsx',
-          Nav:  'app/components/Nav.jsx'
+          Nav:  'app/components/Nav.jsx',
+          Weather: 'app/components/Weather.jsx',
+          WeatherForm:'app/components/WeatherForm.jsx',
+          WeatherMessage: 'app/components/WeatherMessage.jsx',
+          About:'app/components/About.jsx',
+          Examples:'app/components/Examples.jsx'  
       },
       extensions:['', '.js', '.jsx']
   },
