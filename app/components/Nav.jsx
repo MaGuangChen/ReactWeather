@@ -7,6 +7,20 @@ var {Link, IndexLink} = require('react-router');
 他可以根據路徑直接對page的class做樣式喔
 還有其他的feature
 */
+
+let Nav = (props) => {
+    return (
+            <div>
+               <h2>Nav Component</h2>
+               <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:'bold'}}>Get Weather</IndexLink>
+               <Link to="/about" activeClassName="active" activeStyle={{fontWeight:'bold'}}>About</Link>
+               <Link to="/Examples" activeClassName="active" activeStyle={{fontWeight:'bold'}}>Examples</Link>
+            </div>
+        );
+}
+module.exports = Nav;
+
+/*es5 做法
 var Nav = React.createClass({
     render: function(){
         return (
@@ -19,5 +33,4 @@ var Nav = React.createClass({
         );
     }
 });
-
-module.exports = Nav;
+*/

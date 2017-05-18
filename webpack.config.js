@@ -13,7 +13,8 @@ module.exports = {
           WeatherForm:'app/components/WeatherForm.jsx',
           WeatherMessage: 'app/components/WeatherMessage.jsx',
           About:'app/components/About.jsx',
-          Examples:'app/components/Examples.jsx'  
+          Examples:'app/components/Examples.jsx',
+          openWeatherMap: 'app/api/openWeatherMap.jsx'  
       },
       extensions:['', '.js', '.jsx']
   },
@@ -28,6 +29,7 @@ module.exports = {
              exclude:/(node_modules｜bower_components)/
           }
       ]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'//不用這個會因為翻譯成es5而變成幾萬行
 };
 
