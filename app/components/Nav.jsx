@@ -25,10 +25,10 @@ let Nav = React.createClass({
                   <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:'bold'}}>看今日天氣</IndexLink>
                 </li>
                 <li>
-                  <Link to="/about" activeClassName="active" activeStyle={{fontWeight:'bold'}}>關於Paul</Link>
+                  <Link to="/about" activeClassName="active" activeStyle={{fontWeight:'bold'}}>關於這個應用</Link>
                 </li>
                 <li>
-                  <Link to="/Examples" activeClassName="active" activeStyle={{fontWeight:'bold'}}>一些範例</Link>
+                  <Link to="/Examples" activeClassName="active" activeStyle={{fontWeight:'bold'}}>搜尋想法</Link>
                 </li>
               </ul>
           
