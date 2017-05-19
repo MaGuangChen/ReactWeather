@@ -1,6 +1,18 @@
 $space-large: 15rem;
 $space-midium: 2.5rem;
 $title-color:#555;
+$main-background-gradient:linear-gradient(to left,#c2e59c,#64b3f4);
+body {
+  background: $main-background-gradient;
+}
+
+.img-background{
+  opacity: 0.5;
+  background: url('https://cdn.dribbble.com/users/43342/screenshots/2261836/shot1.jpg');
+  background-position: center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
 
 .page-title {
     color:$title-color;
