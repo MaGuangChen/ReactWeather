@@ -5,7 +5,7 @@ let Examples = (props) => {
   //加入了fundation class，並且引入router然後讓兩個li能夠進入連結首頁網址加上location
  return (
            <div>
-             <h1 className="text-center">尋找搜尋想法</h1>
+             <h1 className="text-center page-title">尋找搜尋想法</h1>
              <p>這邊有一些可以測試的地點</p>
              <ol>
                <li>

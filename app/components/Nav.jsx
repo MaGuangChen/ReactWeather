@@ -38,7 +38,7 @@ let Nav = React.createClass({
               <form onSubmit={this.onSearch}>
                 <ul className="menu">
                    <li>
-                      <input type="search" placeholder="輸入所在地"/>
+                      <input type="search" placeholder="輸入希望搜尋的城市"/>
                    </li>
                    <li>
                        <input type="submit" className="button" value="取得本日氣溫" />

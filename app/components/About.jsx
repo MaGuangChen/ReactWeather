@@ -4,7 +4,7 @@ var React = require('react');
     let About = (props) => {
          return(
           <div>
-            <h1 className="text-center">關於這個應用</h1>
+            <h1 className="text-center page-title">關於這個應用</h1>
             <p>這是一個weather application 用react 做，只是為了練一下啦</p>
             <p>這邊講一下我用了什麼工具：</p>
             <ul>

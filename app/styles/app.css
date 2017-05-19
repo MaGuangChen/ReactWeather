@@ -1,0 +1,8 @@
+.page-title {
+    margin-top: 15rem;
+    margin-bottom: 2.5rem;
+}
+/*這個會設定type為search的*/
+input [type = search] {
+  box-shadow: none;
+}
