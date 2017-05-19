@@ -2,7 +2,7 @@ var React = require('react');
 var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
 var openWeatherMap = require('openWeatherMap');
-
+var ErrorModal = require('ErrorModal');
 
 //開始囉
 var Weather = React.createClass({
@@ -22,17 +22,21 @@ var Weather = React.createClass({
 
       
       //更新state，在isLoading property被輸入時，變為true
-      this.setState({isLoading:true});
-     //使用es6 promise，來根據openWeatherMap.jsx摔出來的return顯示訊息
+      this.setState({
+        isLoading:true,
+        errorMessage: undefined //讓錯誤訊息出現所需要的新的state
+      });
+     //使用es6 promise，來根據openWeatherMap.jsx摔出來的return顯示訊息，這邊是在api資料夾內的
      openWeatherMap.getTemp(location).then(function(temp){
          that.setState({
            isLoading: false,
            location: location,
            temp: temp
          });
-     },function(errorMessage){
+     },function(e){//使用e的原因是因為js中所使用習慣的錯誤訊息都用這個
         that.setState({
-          isLoading:false
+          isLoading:false,
+          errorMessage: e.message
         });
         alert(errorMessage);
      });
@@ -45,7 +49,7 @@ var Weather = React.createClass({
     },
 
     render: function(){
-        var {isLoading,temp,location} = this.state;
+        let {isLoading,temp,location,errorMessage} = this.state;
         //這個function是用來做一個loading，我們直接在render時注入他就好
         function renderMessage(){
           if(isLoading){
@@ -55,12 +59,21 @@ var Weather = React.createClass({
           }
         }
 
+        //render 錯誤訊息function，在有錯誤時印，檢查errorMessage這個state
+        function renderError(){
+              if(typeof errorMessage === 'string'){
+                return (
+                   <ErrorModal message={errorMessage}/>
+                );
+              }
+        }
+
         return(
           <div>
             <h3 className="text-center">Paul & React 搜天氣 </h3>
             <WeatherForm onSearch={this.handleSearch}/> 
             {renderMessage()}
-            
+            {renderError()}
           </div>
           
         );

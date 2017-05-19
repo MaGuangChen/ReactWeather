@@ -6,7 +6,7 @@ var WeatherForm = React.createClass({
      e.preventDefault();
 
      //call parents function 去拿ref props，會把取得的資料存在變數location中
-     var location = this.refs.location.value;    
+     let location = this.refs.location.value;    
      
      //讓data是正確的，在輸入
      if(location.length > 0){

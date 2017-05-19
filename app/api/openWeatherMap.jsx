@@ -11,7 +11,7 @@ const OPEN_WEATHER_MAP_URL ='http://api.openweathermap.org/data/2.5/weather?appi
 
 module.exports = {
     
-    //location參數是從WeatherForm.jsx過來的
+    //location參數是從WeatherForm.jsx過來的，另外需要提到的這邊用到es6 promise，而resolve跟reject在webpackconfig裡面
     getTemp: function(location){
        let encodedLocation = encodeURIComponent(location);//避免因為user輸入的空白值或其他變成一些字元encode
        
@@ -25,8 +25,9 @@ module.exports = {
            }else{
                return res.data.main.temp;//json內的資料
            }
-       },function(res){
-          throw new Error(res.data.message);
+       },function(err){
+           //丟錯誤訊息
+          throw new Error("抱歉耶！無法找到你所輸入的城市，提醒一下這個api只吃英文喔笨豬");
        });
     }
 }
