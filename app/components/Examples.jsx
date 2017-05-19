@@ -9,10 +9,10 @@ let Examples = (props) => {
              <p>這邊有一些可以測試的地點</p>
              <ol>
                <li>
-                  <Link to='/?location=Taipei'>`Taipei, Taiwan 台北,台灣`</Link>
+                  <Link to='/?location=Taipei'>Taipei, Taiwan 台北,台灣</Link>
                </li>
                <li>
-                  <Link to='/?location=Rio'>`Rio, Brazil 里約, 巴西`</Link>
+                  <Link to='/?location=Rio'>Rio, Brazil 里約, 巴西</Link>
                </li>
              </ol>
            </div>
