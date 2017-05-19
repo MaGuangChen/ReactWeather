@@ -3,7 +3,10 @@ var React = require('react');
 
     let About = (props) => {
          return(
-          <h3>About Component</h3>
+          <div>
+            <h3>關於我們</h3>
+            <p>其實沒什麼啦</p>
+          </div>
         );
     }
 

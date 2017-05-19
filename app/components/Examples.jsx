@@ -4,8 +4,8 @@ var React = require('react');
 let Examples = (props) => {
  return (
            <div>
-             <h3>Examples</h3>
-             <p>Welcome to examples page!</p>
+             <h3>範例</h3>
+             <p>之後會陸續增加範例</p>
            </div>
         );
 };
