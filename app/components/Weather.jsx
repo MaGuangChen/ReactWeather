@@ -36,9 +36,11 @@ var Weather = React.createClass({
      },function(e){//使用e的原因是因為js中所使用習慣的錯誤訊息都用這個
         that.setState({
           isLoading:false,
-          errorMessage: e.message
+          errorMessage: e.message,
+          location: undefined,
+          temp:undefined
         });
-        alert(errorMessage);
+        
      });
      //this.setState({
      //location: location,
@@ -47,7 +49,24 @@ var Weather = React.createClass({
         
 
     },
-
+    //讓navbar上面的搜尋框能夠真正根據網址來做搜尋，在mount後render前
+    componentDidMount: function(){
+      //這邊的prop是object
+        let location = this.props.location.query.location;//這邊定義新的props
+        
+        if(location && location.length > 0){
+            this.handleSearch(location);
+            window.location.hash = '#/';
+        }
+    },
+    //只要component props被update就執行，用來監聽被改變的props
+    componentWillReceiveProps: function(newProps){//newProps是被傳入的參數
+      let location = newProps.location.query.location;
+      if (location && location.length > 0) {
+        this.handleSearch(location);
+        window.location.hash = '#/';//回復網址，以避免網址一直停在user輸入時後面會多出q=lacation
+       }
+    },
     render: function(){
         let {isLoading,temp,location,errorMessage} = this.state;
         //這個function是用來做一個loading，我們直接在render時注入他就好

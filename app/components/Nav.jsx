@@ -9,9 +9,17 @@ var {Link, IndexLink} = require('react-router');
 */
 
 let Nav = React.createClass({
-   onSearch: function(e){
+   onSearch: function (e) {
       e.preventDefault();
-      alert('還沒用好');
+
+      let location = this.refs.search.value;//value是指user輸入的value
+      let encodedLocation = encodeURIComponent(location);
+         
+      if (location.length > 0) {
+        this.refs.search.value = '';//清空user輸入框
+        window.location.hash = '#/?location=' + encodedLocation;//負責網址的工作，換頁
+      }
+
    } ,
    render: function(){
      return (
@@ -38,7 +46,7 @@ let Nav = React.createClass({
               <form onSubmit={this.onSearch}>
                 <ul className="menu">
                    <li>
-                      <input type="search" placeholder="輸入希望搜尋的城市"/>
+                      <input type="search" placeholder="輸入希望搜尋的城市" ref="search"/>
                    </li>
                    <li>
                        <input type="submit" className="button" value="取得本日氣溫" />
