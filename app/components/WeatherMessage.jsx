@@ -3,7 +3,7 @@ var React = require('react');
 let WeatherMessage = ({temp,location}) => {
     //參數內的props等於在行內宣告： let {temp,location} = props;
       return (
-          <h3>It's  {temp/*this.props.temp*/} in {location/*this.props.location*/}.</h3>
+          <h4 className="text-center">現在 {location/*this.props.location*/} 是華氏 {temp/*this.props.temp*/}度。</h4>
       );
 }
 module.exports = WeatherMessage;

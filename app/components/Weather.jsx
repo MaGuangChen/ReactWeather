@@ -49,7 +49,7 @@ var Weather = React.createClass({
         //這個function是用來做一個loading，我們直接在render時注入他就好
         function renderMessage(){
           if(isLoading){
-             return <h3>取得api中，記得輸入英文喔，這個api沒辦法辨識中文</h3>
+             return <h3 className="text-center">取得api中，記得輸入英文喔，這個api沒辦法辨識中文</h3>
           } else if(temp && location){
              return <WeatherMessage location={location/*this.state.location*/} temp={temp/*this.state.temp*/}/>
           }
@@ -57,7 +57,7 @@ var Weather = React.createClass({
 
         return(
           <div>
-            <h3>Weather Component</h3>
+            <h3 className="text-center">Paul & React 搜天氣 </h3>
             <WeatherForm onSearch={this.handleSearch}/> 
             {renderMessage()}
             
