@@ -30,7 +30,6 @@ let ErrorModal = React.createClass({
        //以下是jquery selector所以用錢號開囉
        let $modal = $(ReactDOMServer.renderToString(modalMarkup));
        $(ReactDOM.findDOMNode(this)).html($modal);//這是一個尋找dom及component的method
-       
        let modal = new Foundation.Reveal($('#error-modal'));//會pass foundation的jquery
        modal.open(); 
        

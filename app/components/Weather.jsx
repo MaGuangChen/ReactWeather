@@ -10,7 +10,7 @@ var Weather = React.createClass({
   getInitialState: function(){
    
     return {
-      isLoading: false
+      isLoading: false//初始為false避免亂load
     };
   
   },
