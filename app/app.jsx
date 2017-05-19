@@ -6,6 +6,9 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
+//Load foundation讀取 foundation css
+require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
 
 //Route /是由Route tag所設定,當符合/時Main component就會render，
 //底下的Route的path也是指路徑

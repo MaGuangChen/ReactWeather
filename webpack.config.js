@@ -1,5 +1,21 @@
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/app.jsx' ,//入口
+  entry: [
+      'script!jquery/dist/jquery.min.js',//先進jquery，加script的原因是因為本身不是webpack專屬的套件
+      'script!foundation-sites/dist/foundation.min.js',//再進foundation
+      './app/app.jsx'//最後進檔案
+  ] ,//入口
+  externals: {
+     jquery: 'jQery'
+  },
+  plugins: {
+     //provide plugins可以省略一些像是＄號或是其他的
+     new webpack.ProvidePlugin({
+         '$': 'jquery',
+         'jQuery':'jquery'
+     })
+  },
   output: {
       path:__dirname,
       filename: './public/bundle.js'//生成一個bundle.js
