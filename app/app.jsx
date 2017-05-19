@@ -11,7 +11,7 @@ require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
 //App css的樣式要求
-require('style!css!applicationStyles')
+require('style!css!sass!applicationStyles')
 
 
 //Route /是由Route tag所設定,當符合/時Main component就會render，
